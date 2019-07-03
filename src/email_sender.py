@@ -25,6 +25,8 @@ class EmailSender:
         # msg.attach(text.MIMEText('', 'plain'))
         fic.download_story()
         full_path = fic.file_path + '/' + fic.file_name
+        # print(full_path)
+        # print(fic.file_name)
         attachment = open(full_path, 'rb')
         p = base.MIMEBase('application', 'octet-stream')
         p.set_payload((attachment).read())
