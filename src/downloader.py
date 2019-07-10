@@ -1,9 +1,10 @@
 from fanfic_downloader import FanficDownloader
 import password
 from email_sender import EmailSender
-import subprocess
-import  json
-import  ast
+# import subprocess
+# import  json
+# import  ast
+# import fanficfare
 
 fanficfare_path = 'C:/Users/dbarv/PycharmProjects/StupidSummerProject/venv/Scripts/fanficfare.exe'
 file_path = "C:/Users/dbarv/PycharmProjects/StupidSummerProject/build"
