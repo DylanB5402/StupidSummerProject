@@ -1,0 +1,1 @@
+web: python src/server.py $password $email $kindle_email

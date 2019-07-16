@@ -3,8 +3,13 @@ from flask import request
 from fanfic_downloader import FanficDownloader
 import password
 from email_sender import EmailSender
+import sys
 
 app = Flask(__name__)
+
+password = sys.argv[1]
+email = sys.argv[2]
+kindle_email = sys.argv[3]
 
 @app.route("/")
 def hello():
@@ -14,11 +19,16 @@ def hello():
 def test():
     # return "Taco taco taco" + request.form['url']
     url = request.form['url']
-    fic = FanficDownloader("C:/Users/dbarv/PycharmProjects/StupidSummerProject/venv/Scripts/fanficfare.exe ",
+    fic = FanficDownloader("fanficfare",
                            url,
-                           "C:/Users/dbarv/PycharmProjects/StupidSummerProject/build")
-    send = EmailSender(password.my_email, password.password, 587, password.kindle_email)
+                           "/build")
+    send = EmailSender(email, password, 587, kindle_email)
     send.send_fic(fic)
     return 'done'
 
-app.run('localhost', debug=True)
+# app.run('localhost', debug=True)
+if __name__ == '__main__':
+    app.run()
+    # print(687)
+    # print(password + email + kindle_email)
+
