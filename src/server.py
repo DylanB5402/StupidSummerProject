@@ -31,6 +31,7 @@ def test():
     # return "Taco taco taco" + request.form['url']
     # if (met)
     if request.method == 'POST':
+        print('request received')
         url = request.form['url']
         # fic = FanficDownloader("fanficfare", url, "build/")
         # send = EmailSender(email, my_password, 587, kindle_email)
