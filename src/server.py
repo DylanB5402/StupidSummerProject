@@ -19,7 +19,7 @@ kindle_email = sys.argv[3]
 @app.route("/")
 def hello():
     # return "Hello World!"
-    return password + email + kindle_email
+    return "Stupid Summer Project"
 
 @app.route("/hello")
 def hi():
@@ -29,7 +29,7 @@ def hi():
 def test():
     # return "Taco taco taco" + request.form['url']
     # if (met)
-    if (request.method == 'POST'):
+    if request.method == 'POST':
         url = request.form['url']
         fic = FanficDownloader("fanficfare", url, "/build")
         send = EmailSender(email, password, 587, kindle_email)
