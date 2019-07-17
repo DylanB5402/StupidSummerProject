@@ -18,7 +18,12 @@ kindle_email = sys.argv[3]
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    # return "Hello World!"
+    return password + email + kindle_email
+
+@app.route("/hello")
+def hi():
+    return "hello world"
 
 @app.route("/test", methods=['POST', 'GET'])
 def test():
