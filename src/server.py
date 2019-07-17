@@ -31,7 +31,7 @@ def test():
     # if (met)
     if request.method == 'POST':
         url = request.form['url']
-        fic = FanficDownloader("fanficfare", url, "src/build/")
+        fic = FanficDownloader("fanficfare", url, "build/")
         send = EmailSender(email, my_password, 587, kindle_email)
         send.send_fic(fic)
     return "done"
