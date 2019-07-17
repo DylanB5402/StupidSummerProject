@@ -37,8 +37,9 @@ def test():
         # send = EmailSender(email, my_password, 587, kindle_email)
         # send.send_fic(fic)
         t = threading.Thread(target=download_book(url))
+        print('thread exists')
         t.start()
-        t.join()
+        print('thread started')
     return "done"
 
 def download_book(url : str):
