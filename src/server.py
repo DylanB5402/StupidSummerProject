@@ -38,6 +38,7 @@ def test():
         # send.send_fic(fic)
         t = threading.Thread(target=download_book(url))
         t.start()
+        t.join()
     return "done"
 
 def download_book(url : str):
