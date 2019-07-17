@@ -4,6 +4,7 @@ from fanfic_downloader import FanficDownloader
 # import password
 from email_sender import EmailSender
 import sys
+import os
 
 app = Flask(__name__)
 
@@ -32,7 +33,10 @@ def test():
 
 # app.run('localhost', debug=True)
 if __name__ == '__main__':
-    app.run('0.0.0.0')
+    # app.run('0.0.0.0')
+    # app.run()
     # print(687)
     # print(password + email + kindle_email)
+    port = int(os.environ.get("PORT", 33507))
+    app.run(host='0.0.0.0', port=port)
 
