@@ -15,7 +15,7 @@ url = input('url:')
 fic = FanficDownloader("C:/Users/dbarv/PycharmProjects/StupidSummerProject/venv/Scripts/fanficfare.exe",
                        url,
                        "C:/Users/dbarv/PycharmProjects/StupidSummerProject/build")
-send = EmailSender(password.my_email, password.password, 587, password.kindle_email)
+send = EmailSender(password.my_email, password.my_password, 587, password.kindle_email)
 send.send_fic(fic)
 
 # meta_data = str(subprocess.check_output([fanficfare_path, "-f", "mobi", "-m", url], cwd=file_path).decode('utf-8'))

@@ -1,18 +1,18 @@
 from flask import Flask
 from flask import request
 from fanfic_downloader import FanficDownloader
-# import password
+import password
 from email_sender import EmailSender
 import sys
 import os
 
 app = Flask(__name__)
 
-password = sys.argv[1]
+my_password = sys.argv[1]
 email = sys.argv[2]
 kindle_email = sys.argv[3]
 
-# password = password.password
+# my_password = password.my_password
 # email = password.my_email
 # kindle_email = password.kindle_email
 
@@ -31,8 +31,8 @@ def test():
     # if (met)
     if request.method == 'POST':
         url = request.form['url']
-        fic = FanficDownloader("fanficfare", url, "/build")
-        send = EmailSender(email, password, 587, kindle_email)
+        fic = FanficDownloader("fanficfare", url, "build/")
+        send = EmailSender(email, my_password, 587, kindle_email)
         send.send_fic(fic)
     return "done"
 
