@@ -5,6 +5,7 @@ import password
 from email_sender import EmailSender
 import sys
 import os
+import threading
 
 app = Flask(__name__)
 
@@ -31,10 +32,17 @@ def test():
     # if (met)
     if request.method == 'POST':
         url = request.form['url']
-        fic = FanficDownloader("fanficfare", url, "build/")
-        send = EmailSender(email, my_password, 587, kindle_email)
-        send.send_fic(fic)
+        # fic = FanficDownloader("fanficfare", url, "build/")
+        # send = EmailSender(email, my_password, 587, kindle_email)
+        # send.send_fic(fic)
+        t = threading.Thread(target=download_book(url))
+        t.start()
     return "done"
+
+def download_book(url : str):
+    fic = FanficDownloader("fanficfare", url, "build/")
+    send = EmailSender(email, my_password, 587, kindle_email)
+    send.send_fic(fic)
 
 # app.run('localhost', debug=True)
 if __name__ == '__main__':
