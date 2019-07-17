@@ -1,4 +1,4 @@
 import requests
 
-r = requests.post("http://localhost:5000/test", {'url' : 'https://www.fanfiction.net/s/11762850/1/'})
-# print(r.content.decode('utf-8'))
+r = requests.post("https://stupid-summer-project.herokuapp.com/test", {'url' : 'https://www.fanfiction.net/s/10898868/1/Professor-Arc'})
+print(r.content.decode('utf-8'))

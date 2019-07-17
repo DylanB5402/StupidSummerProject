@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request
 from fanfic_downloader import FanficDownloader
-import password
+# import password
 from email_sender import EmailSender
 import sys
 
@@ -10,6 +10,10 @@ app = Flask(__name__)
 password = sys.argv[1]
 email = sys.argv[2]
 kindle_email = sys.argv[3]
+
+# password = password.password
+# email = password.my_email
+# kindle_email = password.kindle_email
 
 @app.route("/")
 def hello():
@@ -28,7 +32,7 @@ def test():
 
 # app.run('localhost', debug=True)
 if __name__ == '__main__':
-    app.run()
+    app.run('0.0.0.0')
     # print(687)
     # print(password + email + kindle_email)
 
