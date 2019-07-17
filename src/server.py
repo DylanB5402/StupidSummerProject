@@ -28,12 +28,12 @@ def hi():
 @app.route("/test", methods=['POST', 'GET'])
 def test():
     # return "Taco taco taco" + request.form['url']
-    url = request.form['url']
-    fic = FanficDownloader("fanficfare",
-                           url,
-                           "/build")
-    send = EmailSender(email, password, 587, kindle_email)
-    send.send_fic(fic)
+    # if (met)
+    if (request.method == 'POST'):
+        url = request.form['url']
+        fic = FanficDownloader("fanficfare", url, "/build")
+        send = EmailSender(email, password, 587, kindle_email)
+        send.send_fic(fic)
     return 'done'
 
 # app.run('localhost', debug=True)
