@@ -6,8 +6,11 @@ from email_sender import EmailSender
 import sys
 import os
 import threading
+from rq import Queue
+from worker import conn
 
 app = Flask(__name__)
+q = Queue(connection=conn)
 
 my_password = sys.argv[1]
 email = sys.argv[2]
@@ -36,10 +39,9 @@ def test():
         # fic = FanficDownloader("fanficfare", url, "build/")
         # send = EmailSender(email, my_password, 587, kindle_email)
         # send.send_fic(fic)
-        t = threading.Thread(target=download_book(url))
-        print('thread exists')
-        t.start()
-        print('thread started')
+        # t = threading.Thread(target=download_book(url))
+        # t.start()
+        q.enqueue(download_book, url)
     return "done"
 
 
