@@ -42,10 +42,13 @@ def test():
         print('thread started')
     return "done"
 
+
 def download_book(url : str):
     fic = FanficDownloader("fanficfare", url, "build/")
+    # fic.download_story()
     send = EmailSender(email, my_password, 587, kindle_email)
     send.send_fic(fic)
+
 
 # app.run('localhost', debug=True)
 if __name__ == '__main__':

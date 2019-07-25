@@ -23,6 +23,9 @@ class FanficDownloader:
         os.remove(self.file_path + '/' + self.file_name)
 
     def download_story(self):
+        print('start download')
         subprocess.call([self.fanficfare_path, "-f", "mobi", self.url],
                         cwd=self.file_path)
+        print('downloaded')
+
 
