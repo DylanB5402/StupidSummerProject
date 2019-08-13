@@ -15,9 +15,9 @@ file_path = "C:/Users/dbarv/PycharmProjects/StupidSummerProject/build"
 # url = "https://www.fanfiction.net/s/10677106/1/"
 url = input('url:')
 # url = 'https://www.fanfiction.net/s/11762850/1/Harry-Potter-and-the-Accidental-Horcrux'
-fic = FanficDownloader("C:/Users/dbarv/PycharmProjects/StupidSummerProject/venv/Scripts/fanficfare.exe",
+fic = FanficDownloader("StupidSummerProject/venv/Scripts/fanficfare.exe",
                        url,
-                       "C:/Users/dbarv/PycharmProjects/StupidSummerProject/build")
+                       "StupidSummerProject/build")
 send = EmailSender(password.my_email, password.my_password, 587, password.kindle_email)
 send.send_fic(fic)
 
