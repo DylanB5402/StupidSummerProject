@@ -1,5 +1,5 @@
 from fanfic_downloader import FanficDownloader
-import password
+# import password
 from email_sender import EmailSender
 # import subprocess
 # import  json
@@ -13,13 +13,13 @@ fanficfare_path = 'C:/Users/dbarv/PycharmProjects/StupidSummerProject/venv/Scrip
 file_path = "C:/Users/dbarv/PycharmProjects/StupidSummerProject/build"
 
 # url = "https://www.fanfiction.net/s/10677106/1/"
-url = input('url:')
+# url = input('url:')
 # url = 'https://www.fanfiction.net/s/11762850/1/Harry-Potter-and-the-Accidental-Horcrux'
-fic = FanficDownloader("StupidSummerProject/venv/Scripts/fanficfare.exe",
-                       url,
-                       "StupidSummerProject/build")
-send = EmailSender(password.my_email, password.my_password, 587, password.kindle_email)
-send.send_fic(fic)
+# fic = FanficDownloader("StupidSummerProject/venv/Scripts/fanficfare.exe",
+#                        url,
+#                        "StupidSummerProject/build")
+# send = EmailSender(password.my_email, password.my_password, 587, password.kindle_email)
+# send.send_fic(fic)
 
 # meta_data = str(subprocess.check_output([fanficfare_path, "-f", "mobi", "-m", url], cwd=file_path).decode('utf-8'))
 # # meta_data = meta_data.replace("'", "\"")
