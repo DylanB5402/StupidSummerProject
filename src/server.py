@@ -8,6 +8,7 @@ import os
 import threading
 from rq import Queue
 from worker import conn
+import downloader
 
 app = Flask(__name__)
 q = Queue(connection=conn)
@@ -41,16 +42,16 @@ def test():
         # send.send_fic(fic)
         # t = threading.Thread(target=download_book(url))
         # t.start()
-        q.enqueue(download_book, url)
+        q.enqueue(downloader.download_book, url, email, my_password, kindle_email)
         # download_book(url)
     return "done"
 
 
-def download_book(url : str):
-    fic = FanficDownloader("fanficfare", url, "build/")
-    # fic.download_story()
-    send = EmailSender(email, my_password, 587, kindle_email)
-    send.send_fic(fic)
+# def download_book(url : str):
+#     fic = FanficDownloader("fanficfare", url, "build/")
+#     # fic.download_story()
+#     send = EmailSender(email, my_password, 587, kindle_email)
+#     send.send_fic(fic)
 
 
 # app.run('localhost', debug=True)

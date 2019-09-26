@@ -29,3 +29,9 @@ send.send_fic(fic)
 # json_data = ast.literal_eval(meta_data)
 # print(json_data['output_filename'])
 # print(json_data['title'] + '-json_data[])
+
+def download_book(url : str, email, my_password, kindle_email):
+    fic = FanficDownloader("fanficfare", url, "build/")
+    # fic.download_story()
+    send = EmailSender(email, my_password, 587, kindle_email)
+    send.send_fic(fic)
