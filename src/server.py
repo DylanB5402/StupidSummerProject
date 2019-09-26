@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request
 from fanfic_downloader import FanficDownloader
-import password
+# import password
 from email_sender import EmailSender
 import sys
 import os
