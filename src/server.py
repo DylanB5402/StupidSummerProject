@@ -10,7 +10,7 @@ from rq import Queue
 from worker import conn
 
 app = Flask(__name__)
-q = Queue(connection=conn)
+# q = Queue(connection=conn)
 
 my_password = sys.argv[1]
 email = sys.argv[2]
@@ -41,7 +41,8 @@ def test():
         # send.send_fic(fic)
         # t = threading.Thread(target=download_book(url))
         # t.start()
-        q.enqueue(download_book, url)
+        # q.enqueue(download_book, url)
+        download_book(url)
     return "done"
 
 

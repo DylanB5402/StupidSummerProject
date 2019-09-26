@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="435246d6-5f91-40f2-9fe7-d5ca7ba403f7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/downloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/downloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.gui">
+  <component name="RunManager" selected="Python.requester">
     <configuration name="downloader" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="StupidSummerProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -164,8 +164,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.gui" />
         <item itemvalue="Python.requester" />
+        <item itemvalue="Python.gui" />
         <item itemvalue="Python.server" />
         <item itemvalue="Python.downloader" />
         <item itemvalue="Python.password" />
