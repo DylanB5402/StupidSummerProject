@@ -3,7 +3,8 @@ from email_sender import EmailSender
 import config
 import sys
 
-url = sys.argv[1]
+# url = sys.argv[1]
+url = "https://www.fanfiction.net/s/7340362/1/Drapple"
 my_password = config.my_password
 email = config.my_email
 kindle_email = config.kindle_email

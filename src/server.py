@@ -9,17 +9,18 @@ import threading
 from rq import Queue
 from worker import conn
 import downloader
+import password
 
 app = Flask(__name__)
 q = Queue(connection=conn)
 
-my_password = sys.argv[1]
-email = sys.argv[2]
-kindle_email = sys.argv[3]
+# my_password = sys.argv[1]
+# email = sys.argv[2]
+# kindle_email = sys.argv[3]
 
-# my_password = password.my_password
-# email = password.my_email
-# kindle_email = password.kindle_email
+my_password = password.my_password
+email = password.my_email
+kindle_email = password.kindle_email
 
 @app.route("/")
 def hello():
